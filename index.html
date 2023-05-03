@@ -5,11 +5,8 @@
     <script>
         var hash = window.location.hash;
         var access_token = hash.substring(hash.indexOf("=") + 1, hash.indexOf("&"));
-        var redirect_url = "https://t.me/mybot?start=" + access_token;
+        var redirect_url = access_token ? "https://t.me/mybot?start=" + access_token : "https://t.me/mybot";
         window.location.replace(redirect_url);
     </script>
 </head>
-<body>
-    <h1>Перенаправление........</h1>
-</body>
 </html>

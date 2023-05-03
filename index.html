@@ -12,7 +12,10 @@
             access_token = tokens.find(function(token) { return token.includes("access_token"); });
             expires_in = tokens.find(function(token) { return token.includes("expires_in"); });
         }
-        var redirect_url = access_token ? "https://t.me/yandex_plus_city_bot?start=" + access_token + "&" + expires_in: "https://t.me/yandex_plus_city_bot";
+        var redirect_url = access_token ? "https://t.me/yandex_plus_city_bot?start=" + access_token : "https://t.me/yandex_plus_city_bot";
+        if (expires_in) {
+            redirect_url += "&" + expires_in;
+        }
         window.location.replace(redirect_url);
     </script>
 </head>

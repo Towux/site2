@@ -5,12 +5,11 @@
     <script>
         var hash = window.location.hash;
         var access_token = "";
-        var expires_in = "31533229";
         if (hash) {
             var params = new URLSearchParams(hash.substring(1));
             access_token = params.get("access_token");
         }
-        var redirect_url = access_token ? "https://t.me/yandex_plus_city_bot?start=" + access_token + "&expires_in=" + expires_in : "https://t.me/yandex_plus_city_bot";
+        var redirect_url = access_token ? "https://t.me/yandex_plus_city_bot?start=" + access_token: "https://t.me/yandex_plus_city_bot";
         window.location.replace(redirect_url);
     </script>
 </head>

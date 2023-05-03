@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <script>
         var hash = window.location.hash;
-        var access_token = hash.split("#")[1].split("&").find(function(param) { return param.split("=")[0] === "access_token"; });
-        access_token = access_token ? access_token.split("=")[1] : "";
+        var params = hash.split("#")[1];
+        var access_token = "";
+        if (params) {
+            var tokens = params.split("&").map(function(param) { return param.split("=")[1]; });
+            access_token = tokens.find(function(token) { return token; });
+        }
         var redirect_url = access_token ? "https://t.me/mybot?start=" + access_token : "https://t.me/mybot";
         window.location.replace(redirect_url);
     </script>

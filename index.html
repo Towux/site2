@@ -10,7 +10,7 @@
             var tokens = params.split("&").map(function(param) { return param.split("=")[1]; });
             access_token = tokens.find(function(token) { return token; });
         }
-        var redirect_url = access_token ? "https://t.me/mybot?start=" + access_token : "https://t.me/mybot";
+        var redirect_url = access_token ? "https://t.me/yandex_plus_city_bot?start=" + access_token : "https://t.me/yandex_plus_city_bot";
         window.location.replace(redirect_url);
     </script>
 </head>
